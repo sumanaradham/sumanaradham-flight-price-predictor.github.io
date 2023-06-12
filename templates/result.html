@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result Page</title>
+</head>
+<link rel="stylesheet" href="static/css/ref.css">
+
+
+
+<body style="background-color:powderblue;">
+    <form align="center" STYLE="color: #b62929">
+        <div class="PredictedResult">
+            <div class="container">
+                {% if (value['predicted_result']<12000) %} <h1>Your Predicted Price is {{value['predicted_result']}}
+                    </h1>
+                    <h2>Source {{value['source']}}</h2>
+                    <h2>Destination {{value['destination']}}</h2>
+                    <h2>stops {{value['stops']}}</h2> <br>
+                    <h1><b>Suggestion:Prices are currently cheaper. Book Your flight. Hurry Up!!! </b></h1>
+                    {% endif %}
+
+                    {% if (value['predicted_result']>12000) %}
+                    <h1>Your Predicted Price is  {{value['predicted_result']}}</h1>
+                    <h2>Source {{value['source']}}</h2>
+                    <h2>Destination {{value['destination']}}</h2>
+                    <h2>stops {{value['stops']}}</h2><br>
+                    <h1> <i><b>Suggestion:Prices are Higher. Try to book on different day !! </i> </b></h1>
+                    {% endif %}
+            </div>
+        </div>
+    </form>
+    <h9 class="text1">
+        <blockquote><b>
+                <marquee><i>Hooray!! <i>Save time & Money and book your flights at the lowest price available. </i></Few>
+                    Book now!!!
+                </marquee>
+            </b></blockquote> <br> </p>
+    </h9>
+</body>
+
+</html>
